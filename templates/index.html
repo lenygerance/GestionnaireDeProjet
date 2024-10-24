@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestionnaire de tâches</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Gestionnaire de tâches</h1>
+    <form action="/add" method="POST">
+        <label for="task">Tache :</label>
+        <input type="text" id="task" name="task">
+        <button type="submit">Ajouter une tache</button>
+    </form>
+
+    <h2>Liste des Taches</h2>
+    <ul>
+        <!-- This will display the list of tasks -->
+        {% for task in tasks %}
+        <li>{{ task }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
